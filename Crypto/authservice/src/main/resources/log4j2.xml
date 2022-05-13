@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN" monitorInterval="30">
+
+
+	<!-- Logging Properties -->
+	<Properties>
+		<Property name="LOG_PATTERN">[%-5p|%d{yyyy-MM-dd HH:mm:ss.SSS}|%X{NDC0}] (%c) {%m}%n
+		</Property>
+		<Property name="APP_LOG_ROOT">\\corp.ds.fedex.com\vdi-oz\U4\3734634\Documents\Workspace_DCVR\logsrer
+		</Property>
+	</Properties>
+	<Appenders>
+		<!-- Console Appender -->
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+        
+		<RollingFile name="infoLog" fileName="${APP_LOG_ROOT}/AuthServiceReportLog.log"
+			filePattern="${APP_LOG_ROOT}/AuthServiceReportLog-%d{yyyy-MM-dd}-%i.log">
+			<LevelRangeFilter minLevel="ERROR" maxLevel="TRACE"
+				onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+
+	</Appenders>
+
+	<Loggers>
+
+		<Logger name="com.redhat.hackathon.authservice" additivity="false" level="TRACE">
+			<AppenderRef ref="Console" />
+		   <AppenderRef ref="infoLog" />
+			
+		</Logger>
+
+		<Root level="INFO">
+		<AppenderRef ref="Console" />
+		<AppenderRef ref="infoLog" />
+		</Root>
+
+	</Loggers>
+</Configuration>
