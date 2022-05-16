@@ -7,7 +7,7 @@
 	<Properties>
 		<Property name="LOG_PATTERN">[%-5p|%d{yyyy-MM-dd HH:mm:ss.SSS}|%X{NDC0}] (%c) {%m}%n
 		</Property>
-		<Property name="APP_LOG_ROOT">\\corp.ds.fedex.com\vdi-oz\U7\3734627\Music\Logs
+		<Property name="APP_LOG_ROOT">\\Logs
 		</Property>
 	</Properties>
 	<Appenders>
