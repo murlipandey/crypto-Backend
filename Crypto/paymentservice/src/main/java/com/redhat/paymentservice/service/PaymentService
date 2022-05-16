@@ -1,0 +1,14 @@
+package com.redhat.paymentservice.service;
+
+import java.util.List;
+
+import com.redhat.paymentservice.data.PaymentDetail;
+
+public interface PaymentService {
+
+	public String makePayment(PaymentDetail paymentDetail);
+
+	public String makeQRPayment(PaymentDetail paymentDetail);
+
+	public List<PaymentDetail> fetchPaymentDetailByTransactionID(PaymentDetail paymentDetail);
+}

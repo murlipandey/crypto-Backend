@@ -1,0 +1,54 @@
+package com.redhat.paymentservice.daoimpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.redhat.paymentservice.dao.PaymentServiceDao;
+import com.redhat.paymentservice.data.PaymentDetail;
+import com.redhat.paymentservice.repository.PaymentServiceRepository;
+import com.redhat.paymentservice.util.Constants;
+
+@Component
+public class PaymentServiceDaoImpl implements PaymentServiceDao {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(PaymentServiceDaoImpl.class);
+	@Autowired
+	private PaymentServiceRepository paymentServiceRepository;
+   
+	public String makePayment(PaymentDetail paymentDetail) {
+
+		LOGGER.trace("Start Method : makePayment()");
+	
+
+		paymentServiceRepository.save(paymentDetail);
+	
+		return "success";
+	}
+
+	public String makeQRPayment(PaymentDetail paymentDetail) {
+		LOGGER.trace("Start Method : makeQRPayment()");
+		
+
+		paymentServiceRepository.save(paymentDetail);
+	
+		return "success";
+		
+	}
+
+	
+
+	public List<PaymentDetail> fetchPaymentDetailByTransactionID(String transationID)) {
+		LOGGER.trace("Start Method : fetchPaymentDetailByTransactionID()");
+		List<PaymentDetail> paymentDetailsList = new ArrayList<>();
+		paymentDetailsList = paymentServiceRepository.fetchByTransactionId(transationID);
+
+		LOGGER.trace("End Method : fetchPaymentDetailByTransactionID()");
+		return paymentDetailsList;
+	}
+
+}

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.redhat</groupId>
-	<artifactId>complaintservice</artifactId>
+	<artifactId>paymentservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>complaintservice</name>
-	<description>complaint service for urban peoples</description>
+	<name>paymentservice</name>
+	<description>Payment service for online payment</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,0 +1,15 @@
+package com.redhat.paymentservice.dao;
+
+import java.util.List;
+
+import com.redhat.paymentservice.data.PaymentDetail;
+
+public interface PaymentServiceDao {
+
+	public String makePayment(PaymentDetail paymentDetail);
+
+	public String makeQRPayment(PaymentDetail paymentDetail);
+
+
+	public List<PaymentDetail> fetchPaymentDetailByTransactionID(String transactionID);
+}

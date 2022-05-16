@@ -1,0 +1,91 @@
+package com.redhat.paymentservice.data;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="PAYMENTDETAIL")
+public class PaymentDetail {
+@Id
+@Column(name="ADDRESS")
+private String address;
+
+@Column(name="AMOUNT")
+private String amout;
+
+@Column(name="TIMESTAMP")
+private String timestamp;
+
+
+@Column(name="STATUS")
+private String status;
+
+@Column(name="TRANSACTIONID")
+private String transactionID;
+
+@Column(name="MOBILENUMBER")
+private String mobilenumber;
+
+@Column(name="DIGITALSIGNATURE")
+private String digitalSignature;
+
+public Long getAddress() {
+	return address;
+}
+public void setAddress(string address) {
+	this.address = address;
+}
+public String getAmout() {
+	return amout;
+}
+public void setAmout(String amout) {
+	this.amout = amout;
+}
+public String getStatus() {
+	return status;
+}
+public void setStatus(String status) {
+	this.status = status;
+}
+
+public String getTimestamp() {
+	return timestamp;
+}
+public void setTimestamp(String timestamp) {
+	this.timestamp = timestamp;
+}
+public String getTransactionID() {
+	return transactionID;
+}
+public void setTransactionID(String transactionID) {
+	this.transactionID = transactionID;
+}
+
+public void getMobilenumber() {
+	return mobilenumber;
+}
+
+
+public void setMobilenumber(String mobilenumber) {
+	this.mobilenumber = mobilenumber;
+}
+
+public void getDigitalSignature() {
+	return digitalSignature;
+}
+
+
+public void setDigitalSignature(String digitalSignature) {
+	this.digitalSignature = digitalSignature;
+}
+
+@Override
+public String toString() {
+	return "PaymentDetail [address=" + address + ", amout=" + amout + ", status=" + status
+			+ ", timestamp=" + timestamp + ", transactionID=" + transactionID + ",
+            mobilenumber=" + mobilenumber + ", digitalSignature=" + digitalSignature + "]";
+}
+
+}
