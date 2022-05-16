@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch AuthserviceApplication",
+            "request": "launch",
+            "mainClass": "com.redhat.hackathon.authservice.AuthserviceApplication",
+            "projectName": "authservice"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComplaintserviceApplication",
+            "request": "launch",
+            "mainClass": "com.redhat.hackathon.complaintservice.ComplaintserviceApplication",
+            "projectName": "complaintservice"
+        },
+        {
+            "type": "java",
+            "name": "Launch EurekaServiceApplication",
+            "request": "launch",
+            "mainClass": "com.redhat.hackathon.eurekaservice.EurekaServiceApplication",
+            "projectName": "eurekaservice"
+        },
+        {
+            "type": "java",
+            "name": "Launch RegistrationApplication",
+            "request": "launch",
+            "mainClass": "com.redhat.hackathon.registration.RegistrationApplication",
+            "projectName": "registration"
+        }
+    ]
+}
